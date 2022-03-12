@@ -1,0 +1,14 @@
+Package: testesJr
+Type: Package
+Title: Pacote para testar as funções desenvolvidas no exercícios do curso de R ministrado para a SigmaJr
+Version: 0.1.0
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
