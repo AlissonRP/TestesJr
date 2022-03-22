@@ -1,29 +1,32 @@
-resul = function(A, B){
+resultado = function(A, B){
+  df = data.frame('Times' = c('A','B'), 'Pontos' =c(A,B))
   score = B/A
   if(A==B & A*B >= 150*150){
-    return("Empate")
+    "Empate"
   }
   else if(A==150 | B==150){
-    return('sei la cara')
+    paste0('Vitória do time ',as.character(subset(df,Pontos == max(df$Pontos))['Times']))
   }
   else if(score < 1.6 & A>=60){
-    return('Vitória para o Time A')
+    'Vitória do Time A'
   }
   else if(score >=1.6 & B>=60){
-    return('Vitória para o Time B')
+   'Vitória do Time B'
+  }
+  else {
+    'Partida em andamento'
   }
 }
+resultado(A =35, B = 100)
 
 
-library(testthat)
-teste = function(g){
-  test_that("sum na's", {
-    expect_equal(g(60,1), 'Vitória para o Time A')
-    expect_equal(g(1,60), 'Vitória para o Time B')
-    expect_equal(g(150,150), 'Empate')
-  })
-}
+resultado (A = 150, B = 150)
 
-df = data.frame(A = 2, B = 5)
 
-df[df == max(df)]
+resultado (70, 5)
+
+resultado(150,75)
+
+resultado(42 ,57)
+
+

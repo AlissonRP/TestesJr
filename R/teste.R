@@ -17,6 +17,7 @@
 #'}
 #'
 #'teste(soma)
+#'
 #' @export
 teste = function(g){
   if(as.character(substitute(g)) == 'soma'){
@@ -32,15 +33,24 @@ teste = function(g){
     })
 
   }
+  else if (as.character(substitute(g)) == 'resultado'){
+    test_that("mean of stochastic", {
+      expect_equal(g(A =35, B = 100),resultado(35,100))
+      expect_equal(g(70, 5),resultado(70,5))
+      expect_equal(g(150, 90),resultado(150,90))
+      expect_equal(g(42, 57),resultado(42,57))
+    })
+
+  }
   else if(as.character(substitute(g)) == 'diff_matrix'){
     A = matrix(c(1,2,3,2,4,5,0,0,1), ncol =3, byrow = T)
     B = matrix(c(1, 2, 3, 2,
                  4, 5, 0, 0,
                  1, 1, 2, 3,
                  2, 3, 8, 2), ncol = 4, byrow = T)
-    test_that("diff matrix", {
-      expect_equal(g(A), testesJr:::diff_matrix(A))
-      expect_equal(g(B),testesJr:::diff_matrix(A))
+    testthat::test_that("diff matrix", {
+      testthat::expect_equal(g(A), diff_matrix(A))
+      testthat::expect_equal(g(B),diff_matrix(B))
     })}
   else if(as.character(substitute(g)) == 'total_na'){
     test_that("diff matrix", {
@@ -62,10 +72,18 @@ teste = function(g){
       expect_true(g(5000)>0.97)
     })
 
-  }
+}
+  else if (as.character(substitute(g)) == 'min_max'){
+    test_that("mean of stochastic", {
+      expect_equal(as.numeric(g(c(50,20,-20))['min']),-20)
+      expect_equal(as.numeric(g(c(50,20,-20))['max']),50)
+      expect_equal(as.numeric(g(c(1,1))['max']),1)
+      expect_equal(as.numeric(g(c(1,1))['min']),1)
+    })
 
 }
 
 
+}
 
 
