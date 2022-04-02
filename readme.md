@@ -12,7 +12,9 @@ devtools::install_github("https://github.com/AlissonRP/TestesJr")
 
 ### Como utilizar
 
-Basta criar a função com o nome indicado nos exercícios e assegurar de seguir o que está indicado nas observações. Suponha que você tenha desenvolvido a função para o exerçicio 10, da seguinte maneira:
+Basta criar a função com o nome indicado nos exercícios e assegurar de seguir o que está indicado nas observações. 
+
+Suponha que você tenha desenvolvido a função para o exerçicio 10, da seguinte maneira:
 
 
 ```r
@@ -30,9 +32,9 @@ diff_matrix <- function(A) {
   }
 }
 ```
-Para testar se sua implementação está ok, basta digitar `testesJr::teste(<function_name>)`, nesse caso `<function_name>` é `diff_matrix`.
+Para testar se sua implementação "está ok", basta digitar `testesJr::teste(<function_name>)`, nesse caso `<function_name>` é `diff_matrix`.
 
-Se a implementação da está ok você vai receber a seguinte mensagem: `Test passed`, do contrário encontrará um erro e precisará pensar melhor sobre a função desenvolvida.
+Se a implementação da função está ok você vai receber a seguinte mensagem: `Test passed`, do contrário encontrará um erro e precisará pensar melhor sobre a função desenvolvida.
 ```r
 testesJr::teste(diff_matrix)
 #> Test passed 😸
