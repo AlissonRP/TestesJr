@@ -4,3 +4,5 @@ test_that("multiplication works", {
   expect_equal(diferenca(1), 0)
   expect_error(diferenca(-3), 'Números naturais são positivos!')
 })
+
+

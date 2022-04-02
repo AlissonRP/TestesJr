@@ -34,10 +34,10 @@ library(magrittr)
 1:5 %>% mean()
 ```
 
-Em outras palavras podemos escrever `g(w,z) `usando pipe como `w  %>%  g(z)`.  
+Em outras palavras podemos escrever `g(w,z) `usando pipe `w  %>%  g(z)`.  
 A partir da versão 4.1 a linguagem `R` já possui um pipe `|>` na versão base, ou seja sem necessidade da "utilização" de pacotes.
 
-Baseando-se no exemplo anterior, reescreva os seguintes códigos usando pipe: 
+Baseando-se no exemplo anterior, reescreva os seguintes códigos usando pipe  
 * `median(1:20)`
 * `sum(rep(1,50))`
 * `plot(mean(rnorm(50)))`
@@ -65,35 +65,24 @@ soma(1,2,4)
 
 ## 2
 Nesse exercicio  você vai precisar implementar algumas regras do jogo  3 sp, esse game possui um modo em que o objetivo é capturar zonas e derrotar seus inimigos, a partida possui certa pontuação, existem três maneiras de uma partida ser finalizada:
-1. Um time atinge 150 pontos;
-2. O tempo de duração da partida acaba;
-3. Se um time possuir 60 pontos e  60% pontos a mais que o seu time  adversário a partida é finalizada. 
+1. Um time atinge 150 pontos
+2. O tempo de duração da partida acaba
+3. Se um time possuir 60 pontos e  60% pontos a mais que o seu time  adversário a partida é finalizada 
 
 Implemente uma função  denominada `resultado` em que possui duas entradas, pontuação do time A e pontuação do time B e deve retornar a decisão do resultado da partida.    
 * Exemplos
 
 ```r
-resultado(A =35, B = 100)
-#> [1] "Vitória do Time B"
+resultado(120, 150)
+"Time B Venceu"
 
+resultado (150, 150)
+"Empate"
 
-resultado A = 150, B = 150)
-#> [1] "Empate"
-
-
-resultado(70, 5)
-#> [1] "Vitória do Time A"
-
-resultado(150,75)
-#> [1] "Vitória do time A"
-
-resultado(37 ,45)
-#> [1] "Partida em andamento"
+resultado (80, 5)
+"Time A Venceu"
 ```
-**Obs 1**: Deixe a saída da função **identica** aos exemplos.  
-
-**Obs 3**: A informação sobre a partida ser finalizada por tempo é meralmente curiosidade.
-
+**Obs**: A informação sobre a partida ser finalizada por tempo é meralmente curiosidade, **não** deve ser implementada na função, e note também que se nenhuma das três maneiras for satisfeita a partida **não** deve ser finalizada, portanto a função não deve ter saída alguma
 
 ## 3
 Desenvolva uma função denominada `aff`  que recebe como argumento `N` e vai *printar* no console a concatenação de `A`  mais a repetição de `N` vezes de `H`, assim para `aff(4)` tem-se:
@@ -150,29 +139,34 @@ total_na(c(2, 3, NA, 4, NA), c(NA, NA, NA, 1), c(NA, 2))
 
 
 ## 7
-Desenvolva uma função denominada `conta` que tem como entrada um vetor de tamanho `n` que retorna um `data.frame` com a quantidade de frequência de números positivos, negativos e 0 no vetor de entrada.  
-* Exemplo
+Desenvolva uma função que tem como entrada um vetor de tamanho `n` e  tem como saída a frequência de números positivos, negativos e 0 no vetor de entrada
 
-```r
-conta(c(-1,2,3))
-#>   Positivos Negativos Zeros
-#> 1 0.6666667 0.3333333     0
-
-conta(c(-1,2,0,-4,5,6,10))
-#>   Positivos Negativos     Zeros
-#> 1 0.5714286 0.2857143 0.1428571
-
-```
-* **Obs**: Mantenha o nome das colunas do `data.frame` os mesmos do exemplo
 
 
 ## 8
-Teoricamente sabemos que se y ~Normal $(\mu = 0,\sigma = 1)$ a seguinte probabilidade  $P(\mu-3\sigma<y<\mu+3\sigma)$ é igual a **0.99**. Desenvolva uma função denominada `prob` que gera `K`  observações de uma distribuição normal e estima a probabilidade anterior.
+Teoricamente sabemos que se y ~Normal $(\mu,\sigma)$ a seguinte probabilidade é igual por  $P(\mu-\sigma<y<\mu+\sigma)$. Desenvolva uma função que gera `K`  observações de uma distribuição normal e estima a probabilidade anterior.
 
 * **Dica** : Use a função `rnorm` para a geração dos números
 
-
 ## 9
+Dado um  DNA, retorne sua transcrição para RNA 
+
+
+
+Os 4 nucleotideos encontrados no DNA são adenina (**A**), citosina (**C**),
+guanina (**G**) e timina (**T**).
+
+Os 4 nucleotideos encontrados no RNA are adenina (**A**), citosina (**C**),
+guanina (**G**) e uracila (**U**).
+
+Dado um DNA , sua transcrição para RNA é formada pela transcrição de cada dos seus nucleotideos sendo:
+
+* `G` -> `C`
+* `C` -> `G`
+* `T` -> `A`
+* `A` -> `U`
+
+## 10
 Escreva uma função denominada `min_max` que retorna o minimo e o máximo de um vetor em formato de `dataframe` ou `tibble`.
 * Exemplo
 
@@ -181,10 +175,9 @@ min_max(c(1,2,5,0.5))
 #>   min max
 #> 1 0.5   5
 ```
-* **Obs 1**: O mínimo e o máximo **não** deve ser encontrados usando as funções `min` e `max`
-* **Obs 2**: Mantenha o nome das colunas do `data.frame` os mesmos do exemplo
+**Obs**: O mínimo e o máximo **não** deve ser encontrados usando as funções `min` e `max`
 
-## 10
+## 11
 Escreva uma função  denominada `diff_matrix` que tem como entrada uma matriz quadrada e retorna o módulo da diferença da somas das diagonais.
 
 * Exemplo  
