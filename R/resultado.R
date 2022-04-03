@@ -17,16 +17,16 @@ resultado = function(A, B){
     'Partida em andamento'
   }
 }
-resultado(A =35, B = 100)
+#resultado(A =35, B = 100)
 
 
-resultado (A = 150, B = 150)
+#resultado (A = 150, B = 150)
 
 
-resultado (70, 5)
+#resultado (70, 5)
 
-resultado(150,75)
+#resultado(150,75)
 
-resultado(42 ,57)
+#resultado(42 ,57)
 
 
